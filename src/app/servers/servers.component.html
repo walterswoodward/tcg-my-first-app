@@ -1,14 +1,22 @@
-<!-- $event is a reserved key word containing the event data -->
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<!-- $event is a reserved key word containing the event data (this is One Way Data Binding) -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+
+<!-- An easier approach using Two Way Data Binding:
+1. Trigger on the input event an update equivalent to the serverName property
+2. It will update this input's value if the value of serverName is changed elsewhere -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
 <!-- This will dynamically be updated when the above input event is triggered and onUpdateServerName is called -->
 <p>{{ serverName }}</p>
+
 <!-- Note here that we are not binding the the "disabled" attribute, but in fact are directly binding
 to the native disabled property that belongs to this element -->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
 <!-- String interpolation approach: -->
-<p>{{ allowNewServer }}</p>
+<!-- <p>{{ allowNewServer }}</p> -->
+
 <!-- Property Binding approach: -->
 <!-- <p [innerText]="allowNewServer"></p> -->
 <p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<!-- <app-server></app-server>
+<app-server></app-server> -->
