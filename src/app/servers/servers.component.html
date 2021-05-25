@@ -1,3 +1,7 @@
+<!-- $event is a reserved key word containing the event data -->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<!-- This will dynamically be updated when the above input event is triggered and onUpdateServerName is called -->
+<p>{{ serverName }}</p>
 <!-- Note here that we are not binding the the "disabled" attribute, but in fact are directly binding
 to the native disabled property that belongs to this element -->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
