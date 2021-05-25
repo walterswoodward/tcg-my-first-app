@@ -18,9 +18,13 @@ export class ServersComponent implements OnInit {
     // Once this component is created, after two seconds, update the allowNewServer property to true
     // Since we have established a two-way binding between the disabled property for the `Add Server` button
     // and this.allNewServer, the Add Server button will be enabled two seconds after being loaded.
-    setTimeout(() => {
-        this.allowNewServer = true;
-    }, 2000)
+
+    // UPDATE: Commented out, since this functionality was replaced with something that makes more
+    // sense -- the input is disabled when serverName is an empty string
+
+    // setTimeout(() => {
+    //     this.allowNewServer = true;
+    // }, 2000)
   }
 
   ngOnInit(): void {
@@ -31,8 +35,11 @@ export class ServersComponent implements OnInit {
   }
 
   onUpdateServerName(event: any) {
-    // console.log(event);
-    this.serverName = (<HTMLInputElement>event.target) .value;
+    let inputText = (<HTMLInputElement>event.target).value
+    this.serverName = inputText;
   }
 
+  resetServerName() {
+    this.serverName = '';
+  }
 }

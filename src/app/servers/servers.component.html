@@ -10,8 +10,8 @@
 
 <!-- Note here that we are not binding the the "disabled" attribute, but in fact are directly binding
 to the native disabled property that belongs to this element -->
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-
+<button class="btn btn-primary" [disabled]="serverName === ''" (click)="onCreateServer()">Add Server</button>
+<button class="btn btn-secondary" (click)="resetServerName()">Reset Server Name</button>
 <!-- String interpolation approach: -->
 <!-- <p>{{ allowNewServer }}</p> -->
 
