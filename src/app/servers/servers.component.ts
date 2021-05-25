@@ -12,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
   serverCreationStatus: string = 'No server was created';
-  serverName = 'Testserver';
+  serverName: string = ''; // This obviously isn't necessary, but is left in as an example of two way binding
+  serverCreated: boolean = false;
 
   constructor() {
     // Once this component is created, after two seconds, update the allowNewServer property to true
@@ -31,6 +32,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
     this.serverCreationStatus = "Server was created! Name is " +  this.serverName;
   }
 
