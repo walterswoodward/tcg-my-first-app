@@ -17,9 +17,11 @@ to the native disabled property that belongs to this element -->
 
 <!-- Property Binding approach: -->
 <!-- <p [innerText]="allowNewServer"></p> -->
+
+<!-- Note that the ngIf directive is a Structural Directive b/c it changes the structure of the HTML -->
 <p *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</p>
 <ng-template #noServer>
   <p>{{ "No server was created" }}</p>
 </ng-template>
-<!-- <app-server></app-server>
-<app-server></app-server> -->
+<app-server></app-server>
+<app-server></app-server>
