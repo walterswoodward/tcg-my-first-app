@@ -5,7 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component'; // Note the .ts extension is added by WebPack
+import { ServersComponent } from './servers/servers.component';
+import { AttributeComponent } from './attribute/attribute.component';
+import { ClassComponent } from './class/class.component'; // Note the .ts extension is added by WebPack
 
 // The NgModule decorator imported from angular's core
 @NgModule({
@@ -13,7 +15,9 @@ import { ServersComponent } from './servers/servers.component'; // Note the .ts 
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent
+    ServersComponent,
+    AttributeComponent,
+    ClassComponent
   ],
   imports: [
     BrowserModule,
