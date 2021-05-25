@@ -1,1 +1,9 @@
-<p>servers works!</p>
+<!-- Note here that we are not binding the the "disabled" attribute, but in fact are directly binding
+to the native disabled property that belongs to this element -->
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<!-- String interpolation approach: -->
+<p>{{ allowNewServer }}</p>
+<!-- Property Binding approach: -->
+<p [innerText]="allowNewServer"></p>
+<app-server></app-server>
+<app-server></app-server>
