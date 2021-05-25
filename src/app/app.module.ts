@@ -4,14 +4,16 @@ import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component'; // Note the .ts extension is added by WebPack
+import { ServerComponent } from './server/server.component';
+import { ServersComponent } from './servers/servers.component'; // Note the .ts extension is added by WebPack
 
 // The NgModule decorator imported from angular's core
 @NgModule({
   // You MUST register your modules here
   declarations: [
     AppComponent,
-    ServerComponent
+    ServerComponent,
+    ServersComponent
   ],
   imports: [
     BrowserModule,
