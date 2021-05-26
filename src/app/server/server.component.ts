@@ -5,7 +5,12 @@ import { Component } from '@angular/core';
   // naming convention: `app-` + file name
   selector: 'app-server',
   templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css']
+  styleUrls: ['./server.component.css'],
+  styles: [`
+    .online {
+      color: white;
+    }
+  `]
 })
 
 export class ServerComponent {
@@ -22,5 +27,9 @@ export class ServerComponent {
 
   getColor() {
     return this.serverStatus === 'online' ? 'green' : 'red';
+  }
+
+  serverStatusIsOnline() {
+    return {online: this.serverStatus === 'online'};
   }
 }

@@ -1,3 +1,6 @@
 <!-- Note that the only requirement for string interpolation is that it utlimately must return a string -->
 <!-- Note that with ngStyle, the square brackets indicate that we are binding to a property of the directive -->
-<p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<p
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="serverStatusIsOnline()"
+>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>

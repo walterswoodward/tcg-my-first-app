@@ -1,0 +1,20 @@
+<h1>Assignment #3</h1>
+<button class="btn btn-primary" (click)="onShowPassword($event)">Display Details</button>
+<p *ngIf="showPassword; else noPassword">Secret Password = tuna</p>
+<ng-template #noPassword>
+  <p>{{ "You don't have permission to see the secret password!" }}</p>
+</ng-template>
+<table>
+  <tr>
+    <th>Count</th>
+    <th>Timestamp</th>
+  </tr>
+  <tr
+    *ngFor="let displayClick of displayClicks"
+    [ngStyle]="{'background-color':displayClick.stripe === true ? 'lavender' : 'dodgerblue' }"
+    [ngClass]="{stripe: displayClick.stripe === false}"
+    >
+    <td>{{ displayClick.count }}</td>
+    <td>{{ displayClick.timestamp }}</td>
+  </tr>
+</table>

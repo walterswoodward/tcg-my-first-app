@@ -14,6 +14,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus: string = 'No server was created';
   serverName: string = ''; // This obviously isn't necessary, but is left in as an example of two way binding
   serverCreated: boolean = false;
+  servers = ['TestServer', 'TestServer2']
 
   constructor() {
     // Once this component is created, after two seconds, update the allowNewServer property to true
@@ -33,6 +34,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = "Server was created! Name is " +  this.serverName;
   }
 
