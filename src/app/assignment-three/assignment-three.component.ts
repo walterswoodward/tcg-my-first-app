@@ -16,12 +16,14 @@ export class AssignmentThreeComponent implements OnInit {
   }
 
   logDisplayClick(timestamp) {
-    console.log(timestamp);
     this.displayClickCount++;
-    let stripe = this.displayClickCount%2;
-
-    this.displayClicks.push({timestamp: timestamp, count: this.displayClickCount, stripe: (stripe === 0)});
-    console.log(this.displayClicks);
+    this.displayClicks.push(
+      {
+        timestamp: timestamp,
+        count: this.displayClickCount,
+        stripe: (this.displayClickCount % 2 === 0)
+      }
+    );
   }
 
   onShowPassword(event) {
