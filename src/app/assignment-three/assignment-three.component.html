@@ -5,14 +5,13 @@
   <p>{{ "You don't have permission to see the secret password!" }}</p>
 </ng-template>
 <table>
-  <tr>
+  <tr [ngStyle]="{textDecoration:'underline'}">
     <th>Count</th>
     <th>Timestamp</th>
   </tr>
   <tr
-    *ngFor="let displayClick of displayClicks"
-    [ngStyle]="{'background-color':displayClick.stripe === true ? 'lavender' : 'dodgerblue' }"
-    [ngClass]="{stripe: displayClick.stripe === false}"
+    *ngFor="let displayClick of displayClicks; let i = index"
+    [ngClass]="{'table__row--striped': i % 2 === 0}"
     >
     <td>{{ displayClick.count }}</td>
     <td>{{ displayClick.timestamp }}</td>

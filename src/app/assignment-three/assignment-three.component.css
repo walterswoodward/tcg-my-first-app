@@ -1,3 +1,8 @@
-.stripe {
+.table__row {
+  background-color: lavendar;
+}
+
+.table__row--striped {
   color: white;
+  background-color: dodgerblue;
 }

@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class AssignmentThreeComponent implements OnInit {
   showPassword: boolean = false;
   displayClicks = [];
-  displayClickCount: number = 0;
 
   constructor() { }
 
@@ -16,12 +15,9 @@ export class AssignmentThreeComponent implements OnInit {
   }
 
   logDisplayClick(timestamp) {
-    this.displayClickCount++;
     this.displayClicks.push(
       {
         timestamp: timestamp,
-        count: this.displayClickCount,
-        stripe: (this.displayClickCount % 2 === 0)
       }
     );
   }
@@ -30,6 +26,4 @@ export class AssignmentThreeComponent implements OnInit {
     this.showPassword = (this.showPassword === false);
     this.logDisplayClick(Math.round(event.timeStamp));
   }
-
-
 }
