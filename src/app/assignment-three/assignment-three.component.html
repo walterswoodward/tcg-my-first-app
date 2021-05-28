@@ -10,8 +10,8 @@
     <th>Timestamp</th>
   </tr>
   <tr
-    *ngFor="let displayClick of displayClicks; let i = index"
-    [ngClass]="{'table__row--striped': i % 2 === 0}"
+    *ngFor="let displayClick of displayClicks; let i = index; let odd = odd;"
+    [ngClass]="{'table__row--striped': odd === true}"
     >
     <td>{{ displayClick.count }}</td>
     <td>{{ displayClick.timestamp }}</td>
